@@ -27,4 +27,6 @@ public interface Server {
 	public PluginManager pmanager();
 	
 	public void start();
+	
+	public World createWorld(WorldCreator creator);
 }

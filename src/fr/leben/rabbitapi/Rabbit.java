@@ -1,7 +1,8 @@
 package fr.leben.rabbitapi;
 
+import java.util.logging.Logger;
+
 import fr.leben.rabbit.RabbitServer;
-import fr.leben.rabbitapi.event.PlayerJoinEvent;
 
 public class Rabbit {
 
@@ -9,10 +10,28 @@ public class Rabbit {
 	
 	public static Rabbit INSTANCE = new Rabbit();
 	
-	public static void main(String[] args) {
+	
+	public static Server getServer() {
+		return SERVER;
 	}
 	
-	public void onCaca(PlayerJoinEvent e) {
-		System.out.println("loule");
+	public static World createWorld(WorldCreator creator) {
+		return getServer().createWorld(creator);
+	}
+	
+	public static Logger getLogger() {
+		return getServer().getLogger();
+	}
+	
+	public static void start() {
+		getServer().start();
+	}
+	
+	public static void shutdown() {
+		getServer().shutdown();
+	}
+	
+	public static void main(String[] args) {
+		Rabbit.start();
 	}
 } 

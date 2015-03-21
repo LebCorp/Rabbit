@@ -8,6 +8,8 @@ import java.util.Collection;
 import java.util.logging.Logger;
 
 import fr.leben.rabbitapi.Server;
+import fr.leben.rabbitapi.World;
+import fr.leben.rabbitapi.WorldCreator;
 import fr.leben.rabbitapi.plugin.Plugin;
 import fr.leben.rabbitapi.plugin.PluginManager;
 
@@ -82,5 +84,10 @@ public class RabbitServer implements Server {
 		} catch (ClassNotFoundException | IOException e) {
 			e.printStackTrace();
 		}
+	}
+
+	@Override
+	public World createWorld(WorldCreator creator) {
+		return null;
 	}
 }
