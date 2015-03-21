@@ -1,16 +1,18 @@
 package net.minecraft.util;
 
-import com.google.common.base.Splitter;
-import com.google.common.collect.Iterables;
-import com.google.common.collect.Maps;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.IllegalFormatException;
-import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 import java.util.regex.Pattern;
+
 import org.apache.commons.io.Charsets;
 import org.apache.commons.io.IOUtils;
+
+import com.google.common.base.Splitter;
+import com.google.common.collect.Iterables;
+import com.google.common.collect.Maps;
 
 public class StringTranslate
 {
@@ -34,20 +36,26 @@ public class StringTranslate
     private long lastUpdateTimeInMilliseconds;
     private static final String __OBFID = "CL_00001212";
 
-    public StringTranslate()
+    @SuppressWarnings("unchecked")
+	public StringTranslate()
     {
         try
         {
             InputStream var1 = StringTranslate.class.getResourceAsStream("/assets/minecraft/lang/en_US.lang");
-            Iterator var2 = IOUtils.readLines(var1, Charsets.UTF_8).iterator();
+            
+            if(var1 == null) {
+            	System.err.println("Error var1");
+            }
+            
+            List<String> var2 = IOUtils.readLines(var1, Charsets.UTF_8);
 
-            while (var2.hasNext())
+            while (var2.iterator().hasNext())
             {
-                String var3 = (String)var2.next();
+                String var3 = var2.iterator().next();
 
                 if (!var3.isEmpty() && var3.charAt(0) != 35)
                 {
-                    String[] var4 = (String[])Iterables.toArray(equalSignSplitter.split(var3), String.class);
+                    String[] var4 = Iterables.toArray(equalSignSplitter.split(var3), String.class);
 
                     if (var4 != null && var4.length == 2)
                     {
@@ -62,7 +70,7 @@ public class StringTranslate
         }
         catch (IOException var7)
         {
-            ;
+            var7.printStackTrace();;
         }
     }
 

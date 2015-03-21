@@ -6,12 +6,13 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
 import java.net.SocketTimeoutException;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
 public class RConThreadClient extends RConThreadBase
 {
-    private static final Logger field_164005_h = LogManager.getLogger();
+    private static final Logger field_164005_h = LogManager.getLogger(RConThreadClient.class);
 
     /**
      * True if the client has succefssfully logged into the RCon, otherwise false

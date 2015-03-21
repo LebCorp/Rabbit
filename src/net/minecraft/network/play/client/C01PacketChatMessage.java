@@ -61,4 +61,8 @@ public class C01PacketChatMessage extends Packet
     {
         this.func_148833_a((INetHandlerPlayServer)p_148833_1_);
     }
+
+	public static String getObfid() {
+		return __OBFID;
+	}
 }

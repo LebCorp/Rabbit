@@ -27,12 +27,26 @@ package fr.leben.rabbitapi.utils;
  */
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 public class RabbitCollections {
 
+	public static <T> Collection<T> newCollection(String list) {
+		
+		if(list.equalsIgnoreCase("arraylist")) {
+			return new ArrayList<T>();
+		}
+			
+		if(list.equalsIgnoreCase("")) {
+			
+		}
+		
+		return null;
+	}
+	
 	public static <K, V> Map<K , V> newMap() {
 		return new HashMap<>();
 	}

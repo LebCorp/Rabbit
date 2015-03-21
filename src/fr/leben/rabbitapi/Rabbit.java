@@ -49,8 +49,8 @@ public class Rabbit {
 		return getServer().getLogger();
 	}
 	
-	public static void start() {
-		getServer().start();
+	public static void start(String... args) {
+		getServer().start(args);
 	}
 	
 	public static void shutdown() {
@@ -58,6 +58,6 @@ public class Rabbit {
 	}
 	
 	public static void main(String[] args) {
-		Rabbit.start();
+		Rabbit.start(args);
 	}
 } 

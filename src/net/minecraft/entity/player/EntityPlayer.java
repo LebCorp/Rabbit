@@ -2,10 +2,12 @@ package net.minecraft.entity.player;
 
 import com.google.common.base.Charsets;
 import com.mojang.authlib.GameProfile;
+
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 import java.util.UUID;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBed;
 import net.minecraft.block.material.Material;
@@ -42,6 +44,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
+import net.minecraft.network.ServerStatusResponse.PlayerCountData;
 import net.minecraft.potion.Potion;
 import net.minecraft.scoreboard.IScoreObjectiveCriteria;
 import net.minecraft.scoreboard.Score;
@@ -2131,7 +2134,7 @@ public abstract class EntityPlayer extends EntityLivingBase implements ICommandS
 
     public static UUID func_146094_a(GameProfile p_146094_0_)
     {
-        UUID var1 = p_146094_0_.getId();
+        UUID var1 = UUID.fromString(p_146094_0_.getId());
 
         if (var1 == null)
         {

@@ -46,9 +46,13 @@ public class RabbitServer implements Server {
 	private Logger logger = Logger.getLogger("RabbitServer");
 	private ArrayList<Plugin> plugins = new ArrayList<Plugin>();
 	private PluginManager pmanager = new PluginManager();
-	private MinecraftServer server = new DedicatedServer(p_i1508_1_);
+	private MinecraftServer server;
 	
 	public RabbitServer() {
+	}
+	
+	public RabbitServer(MinecraftServer server) {
+		this.server = server;
 	}
 	
 	@Override
@@ -110,12 +114,8 @@ public class RabbitServer implements Server {
 	}
 
 	@Override
-	public void start() {
-		try {
-			pmanager().loadPlugins(new File[123]);
-		} catch (ClassNotFoundException | IOException e) {
-			e.printStackTrace();
-		}
+	public void start(String... args) {
+		MinecraftServer.main(args);
 	}
 
 	@Override

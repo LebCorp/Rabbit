@@ -746,7 +746,8 @@ public abstract class MinecraftServer implements ICommandSender, Runnable, IPlay
         return true;
     }
 
-    public void func_82010_a(IUpdatePlayerListBox p_82010_1_)
+    @SuppressWarnings("unchecked")
+	public void func_82010_a(IUpdatePlayerListBox p_82010_1_)
     {
         this.playersOnline.add(p_82010_1_);
     }

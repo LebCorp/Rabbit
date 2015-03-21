@@ -51,7 +51,7 @@ public interface Server {
 	
 	public PluginManager pmanager();
 	
-	public void start();
+	public void start(String... args);
 	
 	public World createWorld(WorldCreator creator);
 }

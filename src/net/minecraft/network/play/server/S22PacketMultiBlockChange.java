@@ -3,6 +3,7 @@ package net.minecraft.network.play.server;
 import java.io.ByteArrayOutputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
+
 import net.minecraft.block.Block;
 import net.minecraft.network.INetHandler;
 import net.minecraft.network.Packet;
@@ -10,12 +11,13 @@ import net.minecraft.network.PacketBuffer;
 import net.minecraft.network.play.INetHandlerPlayClient;
 import net.minecraft.world.ChunkCoordIntPair;
 import net.minecraft.world.chunk.Chunk;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
 public class S22PacketMultiBlockChange extends Packet
 {
-    private static final Logger logger = LogManager.getLogger();
+    private static final Logger logger = LogManager.getLogger(S22PacketMultiBlockChange.class);
     private ChunkCoordIntPair field_148925_b;
     private byte[] field_148926_c;
     private int field_148924_d;

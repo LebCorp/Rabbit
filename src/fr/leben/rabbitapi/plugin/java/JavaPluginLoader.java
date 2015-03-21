@@ -70,11 +70,11 @@ public class JavaPluginLoader implements PluginLoader {
 
 	@Override
 	public void enablePlugin(Plugin plugin) {
-
+		plugin.onEnable();
 	}
 
 	@Override
 	public void disablePlugin(Plugin plugin) {
-
+		plugin.onDisable();
 	}
 }
